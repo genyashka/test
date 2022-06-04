@@ -12,6 +12,7 @@ function App() {
     const [feedback, setFeedback] = useState(FeedbackData)
 
     const deleteFeedback = (id) => {
+        window.alert(localStorage.getItem('test'))
         if(window.confirm('Are you sure you want to delete')){
             setFeedback(feedback.filter((item) => item.id !== id))
         }
@@ -21,7 +22,7 @@ function App() {
     return (
         <>
             <Header />
-            <div className="conteiner">
+            <div className="container">
                 <FeedbackForm />
                 <FeedbackStats feedback={feedback}/>
                 <FeedbackList feedback={feedback} 
